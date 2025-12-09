@@ -1,0 +1,394 @@
+@charset "utf-8";
+
+/* =======================
+   TOKENS
+======================= */
+:root{
+  --bg: #ffffff;
+  --ink: #0b0b0b;
+  --muted: #c2c2c2;
+  --line: #e6e6e6;
+  --accent: #000000;
+  --container: 1100px;
+}
+
+/* =======================
+   BASE
+======================= */
+*,
+::before,
+::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body{
+  background: var(--bg);
+  color: var(--ink);
+  font-family:sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;   /* ← はみ出し保険 */
+}
+
+img{
+  max-width: 100%;
+  display: block;
+}
+
+ul{
+  list-style: none;
+}
+
+/* =======================
+   HEADER
+======================= */
+
+.header-logo{ 
+  display:none;        /* ロゴは今回は非表示 */
+}
+.toggle-menu-button{ 
+  display:none;        /* ハンバーガーも消す */
+}
+
+.header-site-menu a{
+  font-size:50px;
+  font-weight: 800;
+  color:#111;
+  text-decoration:none;
+}
+.header-site-menu a:hover{
+  opacity:.6;
+}
+
+.header-site-menu{
+  color:#111;
+  padding: 0 0 clamp(16px,5vw,60px); /* 左右0 */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  line-height:1;
+}
+
+.header-site-menu ul{
+  list-style:none;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  padding:0;   
+  padding-left: 30px;
+  margin-bottom: -10px;
+  margin-top: 20px;
+}
+
+.header-site-menu a{ 
+  color:#111; 
+  font-size: clamp(16px, 4.8vw, 82px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.header-site-menu a:hover{ 
+  opacity:.6; 
+}
+
+@media (max-width: 400px){
+  .header-site-menu a{
+  font-size:40px;
+  font-weight: 800;
+  color:#000000;
+  text-decoration:none;
+}
+.header-site-menu a:hover{
+  opacity:.6;
+
+}
+
+.header-site-menu{
+  color:#000000;
+  padding: 40px 5px 5px; /* ← 左右0 */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0px;
+  line-height:0.5;
+}
+
+.header-site-menu ul{
+  list-style:none;
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+  padding:0;   
+  margin-bottom: -10px;
+  margin-top: 5px;
+}
+.header-site-menu a:hover{ opacity:.6; }
+
+
+
+.main {
+  margin-top: 120px;
+  padding-top: 40px;
+}
+
+.team-header {
+  margin-top: 100px;
+}
+
+.header {
+  margin-top: 40px;
+}
+
+.footer {
+  padding-bottom: 30px;
+}
+}
+
+/* =======================
+   MAIN LAYOUT
+======================= */
+
+.main{
+  padding: 80px 0 120px;
+}
+
+/* 全体のコンテナ（右奥にロゴマークも敷く） */
+.team-wrapper{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 40px) 80px;
+  position: relative;
+}
+
+/* =======================
+   HEADER AREA
+======================= */
+
+.team-header{
+  margin-bottom: 40px;
+}
+
+.team-title-en{
+  font-family: sans-serif;
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  
+}
+
+.team-title-ja{
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+.team-lead{
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.team-divider{
+  margin-top: 16px;
+  border: none;
+  border-top: 1px solid #000;
+}
+
+/* =======================
+   MEMBERS GRID
+======================= */
+
+.team-main{
+  margin-top: 40px;
+}
+
+.team-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px 32px;
+}
+
+/* 各メンバーカード */
+.member-card{
+  font-size: 13px;
+  z-index: 3;
+}
+
+.member-photo-wrap{
+  background: #f3f3f3;
+}
+
+.member-photo{
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+
+.team-logo-card {
+  width: 100%;
+  height: auto;
+}
+
+/* テキスト部分 */
+.member-role{
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.member-name-ja{
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.member-name-en{
+  font-size: 12px;
+}
+
+/* =======================
+   背景ロゴ
+======================= */
+
+.team-wrapper::before{
+  content: "";
+  position: absolute;
+
+  top: 170px;
+  right: -160px;     /* PCサイズではやや外側に出す */
+
+  width: 670px;
+  height: auto;
+  aspect-ratio: 4 / 3;
+
+  background: url("") no-repeat center/contain;
+
+  z-index: 1;       /* 人物カードより後ろに配置 */
+  pointer-events: none;
+}
+
+/* =======================
+   OTHERS
+======================= */
+
+.team-others{
+  margin-top: 56px;
+}
+
+.others-title{
+  font-family: "Montserrat","Zalando Sans",system-ui,sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.14em;
+}
+
+.others-divider{
+  margin-top: 8px;
+  border: none;
+  border-top: 1px solid #000;
+}
+
+.others-list{
+  margin-top: 16px;
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+
+/* タブレット以下で2カラムにしたい場合 */
+@media (max-width: 768px){
+  .team-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* スマホ（狭い幅）の調整 */
+@media (max-width: 400px){
+
+  /* 1カラムに */
+  .team-grid{
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .team-wrapper{
+    padding-bottom: 60px;
+  }
+
+  /* ← ここで背景ロゴがはみ出さないように調整 */
+  .team-wrapper::before{
+    top: 240px;
+    right: 0;       /* 右端にくっつける（-160pxを上書き） */
+    width: 220px;   /* 小さくしておく */
+    opacity: 0.06;
+  }
+
+  .team-main{
+    margin-top: 32px;
+  }
+}
+
+/* ======================
+   FOOTER
+====================== */
+
+
+
+
+
+.footer{
+  background:#f3f3f3;
+  color:#111;
+  padding: 40px clamp(16px,5vw,60px);
+  display:flex; flex-direction:column; align-items:center; gap:16px;
+  border-top:1px solid var(--line);
+}
+.menu2{ list-style:none; display:flex; gap:16px; flex-wrap:wrap; text-align: center;}
+.menu2 a{ color:#111; }
+.menu2 a:hover{ opacity:.6; }
+
+@media (max-width:640px){
+
+  
+
+  footer{
+    background:#f3f3f3;
+    color:#111;
+    padding: opx ; /* ← 上下の余白は戻す！ */
+    margin-left: 0px;
+    margin-left: 0px;
+    margin-top: 60px; /* ブログとの間隔 */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    border-top:1px solid var(--line);
+  }
+
+  .footer-site-menu {
+    position: center;
+  }
+
+  .menu2{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  /* フッター内リンク */
+  .menu2 a{
+    color:#111;
+    font-size:14px;
+  }
+
+  .menu2 {
+    padding: 0px;
+  }
+}
