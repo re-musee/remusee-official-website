@@ -1,0 +1,375 @@
+@charset "utf-8";
+
+/* ====== このページ用のベース ====== */
+body{
+  background:#ffffff;
+  color:#000;
+  font-family:sans-serif;}
+
+/* ヘッダー：フッターと似た薄グレー＆中央メニュー */
+
+.header-logo{ display:none; }
+          /* ロゴは今回は非表示 */
+.toggle-menu-button{ display:none; }   /* ハンバーガーも消す */
+
+.header-site-menu a{
+  font-size:50px;
+  font-weight: 800;
+  color:#111;
+  text-decoration:none;
+}
+.header-site-menu a:hover{
+  opacity:.6;
+
+}
+
+.header-site-menu{
+  color:#111;
+  padding: 0 0 clamp(16px,5vw,60px); /* ← 左右0 */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  line-height:1;
+}
+
+.header-site-menu ul{
+  list-style:none;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  padding:0;   
+  padding-left: 30px;
+  margin-bottom: -10px;
+  margin-top: 20px;
+}
+
+.header-site-menu a{ 
+  color:#111; 
+  font-size: clamp(16px, 4.8vw, 82px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.header-site-menu a:hover{ opacity:.6; }
+
+@media (max-width: 400px){
+  .header-site-menu a{
+  font-size:40px;
+  font-weight: 800;
+  color:#000000;
+  text-decoration:none;
+}
+.header-site-menu a:hover{
+  opacity:.6;
+
+}
+
+.header-site-menu{
+  color:#000000;
+  padding: 40px 5px 5px; /* ← 左右0 */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0px;
+  line-height:0.5;
+}
+
+.header-site-menu ul{
+  list-style:none;
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+  padding:0;   
+  margin-bottom: -10px;
+  margin-top: 5px;
+}
+.header-site-menu a:hover{ opacity:.6; }
+
+
+
+.main {
+  margin-top: 120px;
+  padding-top: 40px;
+}
+
+.team-header {
+  margin-top: 100px;
+}
+
+.header {
+  margin-top: 40px;
+}
+
+.footer {
+  padding-bottom: 30px;
+}
+}
+/* ====== アーカイブ全体 ====== */
+.blog-main{
+  background:#ffffff;
+}
+
+.blog-archive{
+  width:100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: clamp(40px,6vw,72px) clamp(24px,8vw,80px) 80px;
+  box-sizing:border-box;
+  color:#000;
+}
+
+/* 見出し＋上の線（上部の1本線＆右にBLOG） */
+.blog-archive-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  border-bottom:1px solid #111;
+  padding-bottom:8px;
+  margin-bottom:24px;
+}
+.blog-archive-label{
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:.08em;
+}
+.blog-archive-title{
+  font-size:clamp(40px,9vw,100px);
+  font-weight:800;
+  letter-spacing:-0.04em;
+}
+
+/* カテゴリボタン：中央に横一列 */
+.blog-archive-filter{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-end;        /* ←中央寄せ */
+  gap:8px 16px;
+  margin:24px 0 32px;
+}
+.blog-filter{
+  border-radius:999px;
+  padding:8px 18px;
+  font-size:12px;
+  border:1px solid #c2c2c2;
+  background:#f5f5f5;
+  cursor:pointer;
+  letter-spacing:.04em;
+}
+.blog-filter.is-active{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+
+/* ====== グリッド（線付き） ====== */
+.blog-card-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  /* グリッド線 */
+  border-top:1px solid #d0d0d0;
+  border-left:1px solid #d0d0d0;
+}
+.blog-card{
+  border-right:1px solid #d0d0d0;
+  border-bottom:1px solid #d0d0d0;
+  aspect-ratio: 3 / 4;
+}
+
+/* カードの中身を縦方向のflexにする */
+.blog-card a{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  color:inherit;
+  text-decoration:none;
+  padding:20px 20px;
+}
+.blog-card-thumb{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.blog-card-thumb img{
+  width:auto;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:center;  /* ←ここが重要！ */
+}
+.blog-card:hover img{
+  transform:scale(1.04);
+}
+
+/* 上の細い情報行（カテゴリ＋日付） */
+.blog-card-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:15px;
+  text-transform:uppercase;
+  margin-bottom:6px;
+  margin-top: 20pxpx;
+}
+.blog-card-cat{
+  font-weight:700;
+  letter-spacing:.08em;
+}
+.blog-card-date{
+  color:#777;
+}
+
+/* タイトル＆概要テキスト */
+.blog-card-title{
+  font-size:20px;
+  font-weight:700;
+  line-height:1.4;
+  margin-bottom:10px;
+  margin-top: 20px;
+  text-align: start;
+}
+.blog-card-excerpt{
+  font-size:18px;
+  line-height:1.6;
+  color:#555;
+  margin: 5px 5px 0;
+  text-align:start;
+  flex:1 1 auto;    /* ← 余白をここに持たせて下を押す */
+}
+
+.blog-card-more{
+  margin-top:8px;
+  font-size:16px;
+  text-align:right;
+  color:#777;
+  letter-spacing:.04em;
+}
+.blog-card a:hover .blog-card-more{
+  text-decoration:underline;
+}
+
+/* ====== 下の丸いボタン ====== */
+.blog-more-btn{
+  display:block;
+  margin:40px auto 40px;
+  padding:10px 40px;
+  border-radius:999px;
+  border:none;
+  background:#d1d1d1;
+  color:#2e0850;
+  font-weight:700;
+  font-size:13px;
+  letter-spacing:.06em;
+  cursor:pointer;
+}
+.blog-more-btn:hover{
+  filter:brightness(.95);
+}
+
+/* ====== レスポンシブ ====== */
+@media (max-width:768px){
+  .blog-card-list{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+
+}
+
+@media (max-width:640px){
+  .blog-archive{
+    padding-inline:16px;
+  }
+  .blog-card-list{
+    grid-template-columns:1fr;
+  }
+}
+
+
+.footer{
+  background:#f3f3f3;
+  color:#111;
+  padding: 40px clamp(16px,5vw,60px);
+  display:flex; flex-direction:column; align-items:center; gap:16px;
+  border-top:1px solid var(--line);
+}
+.menu2{ list-style:none; display:flex; gap:16px; flex-wrap:wrap; }
+.menu2 a{ color:#111; }
+.menu2 a:hover{ opacity:.6; }
+
+@media (max-width:640px){
+
+  
+
+  footer{
+    background:#f3f3f3;
+    color:#111;
+    padding: opx ; /* ← 上下の余白は戻す！ */
+    margin-left: 0px;
+    margin-left: 0px;
+    margin-top: 60px; /* ブログとの間隔 */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    border-top:1px solid var(--line);
+  }
+
+  .footer-site-menu {
+    position: center;
+  }
+
+  .menu2{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  /* フッター内リンク */
+  .menu2 a{
+    color:#111;
+    font-size:14px;
+  }
+
+  .menu2 {
+    padding: 0px;
+  }
+
+
+
+    /* ★ここを追加：高さ固定を解除 */
+  .blog-card{
+    aspect-ratio: auto;     /* or unset でもOK */
+  }
+
+  .blog-card a{
+    height: auto;           /* 中身も自動高さに */
+  }
+
+  .blog-more-btn{
+  display:block;
+  margin:0px auto 40px;
+  padding:10px 40px;
+  border-radius:999px;
+  border:none;
+  background:#d1d1d1;
+  color:#2e0850;
+  font-weight:700;
+  font-size:13px;
+  letter-spacing:.06em;
+  cursor:pointer;
+}
+body {
+  margin: 0;
+}
+
+
+}
+
