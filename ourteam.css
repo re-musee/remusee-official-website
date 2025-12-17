@@ -44,17 +44,22 @@ ul{
 /* =======================
    HEADER
 ======================= */
-.header-logo{ 
-  display:none;
-}
+.header-logo{ display:none; }
+.toggle-menu-button{ display:none; }   /* ハンバーガーも消す */
 
-.toggle-menu-button{ 
-  display:none;
+.header-site-menu a{
+  font-size:50px;
+  font-weight: 800;
+  color:#111;
+  text-decoration:none;
+}
+.header-site-menu a:hover{
+  opacity:.6;
 }
 
 .header-site-menu{
   color:#111;
-  padding: 0 0 clamp(16px,5vw,60px);
+  padding: 0 0 clamp(16px,5vw,60px); /* ← 左右0 */
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -63,29 +68,26 @@ ul{
 }
 
 .header-site-menu ul{
+  list-style:none;
   display:flex;
   gap:10px;
   flex-wrap:wrap;
+  padding:0;   
   padding-left: 30px;
-  margin-top: 20px;
   margin-bottom: -10px;
+  margin-top: 20px;
 }
 
-.header-site-menu a{
-  color:#111;
+.header-site-menu a{ 
+  color:#111; 
   font-size: clamp(16px, 4.8vw, 82px);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 1;
-  text-decoration:none;
 }
+.header-site-menu a:hover{ opacity:.6; }
 
-.header-site-menu a:hover{
-  opacity:.6;
-}
-
-/* ===== HEADER : Small ===== */
 @media (max-width: 768px) {
 
   .header-logo{
@@ -99,7 +101,7 @@ ul{
   .header-site-menu a{
     font-size:40px;
     font-weight: 800;
-    color:#040404;
+    color:#000000;
     text-decoration:none;
   }
   .header-site-menu a:hover{
@@ -127,8 +129,10 @@ ul{
     margin-top: 5px;
   }
   .header-site-menu a:hover{ opacity:.6; }
+  .footer {
+    padding-bottom: 30px;
+  }
 }
-
 
 /* =======================
    MAIN LAYOUT
