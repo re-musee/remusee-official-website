@@ -3,7 +3,9 @@
    header / footer はここで定義
 ========================================= */
 
-/* ベース */
+/* =======================
+   BASE
+======================= */
 body{
   margin:0;
   font-family:sans-serif;
@@ -11,7 +13,14 @@ body{
   color:#ffffff;
 }
 
-/* メインコンテンツ全体 */
+p {
+  font-size: clamp(14px, 1.2vw, 56px);
+}
+
+/* =======================
+   MAIN / SECTION COMMON
+======================= */
+
 .main{
   background:#141414;
   color:#ffffff;
@@ -27,15 +36,10 @@ body{
   padding-right:20px;
 }
 
-
-p {
-  font-size: clamp(14px, 1.2vw, 56px);
-}
-
-
-/* -------------------------
+/* =======================
    HERO
--------------------------- */
+======================= */
+
 .hero{
   padding-top:72px;
   padding-bottom:56px;
@@ -69,21 +73,18 @@ p {
   text-transform:uppercase;
 }
 
-/* HEROの下の仕切り（あれば） */
+/* HEROの下の仕切り */
 .hero-divider{
   width:60px;
-  height:1px;
   background:#ffffff66;
   margin:0 auto 32px;
   max-width: fit-content;
   height: auto;
 }
 
-
-
-/* -------------------------
+/* =======================
    Mission / Vision
--------------------------- */
+======================= */
 
 .mv-row{
   padding-top:0;
@@ -115,17 +116,15 @@ p {
   text-align:left;
 }
 
-/* -------------------------
+/* =======================
    FEATURE 共通
-   （ひらく／ともにみる／言葉にする／つながる／高め合う）
--------------------------- */
+======================= */
 
 .feature{
   padding-top:32px;
   padding-bottom:40px;
 }
 
-/* 中身は全部「縦並び」ベース */
 .feature-inner,
 .feature-inner-kotoba{
   max-width:100%;
@@ -134,7 +133,7 @@ p {
   margin-top:0;
 }
 
-/* 画像：上・横幅100% */
+/* 画像 */
 .feature-img-wrap{
   width:100%;
   max-width:100%;
@@ -149,7 +148,7 @@ p {
   object-fit:cover;
 }
 
-/* テキスト：画像の下にフル幅で */
+/* テキスト */
 .feature-text{
   width:100%;
   max-width:100%;
@@ -163,7 +162,7 @@ p {
   font-weight:700;
 }
 
-/* PC用の“ずらし／右寄せ”を全部リセット */
+/* PC用ずらし解除 */
 .feature-hiraku .feature-text-right,
 .feature-tomonimiru .feature-text-left,
 .feature-tunagaru .feature-text-left,
@@ -172,13 +171,12 @@ p {
   text-align:left;
 }
 
-
 .feature-kotoba .feature-text-left{
   max-width:100%;
   margin:0;
 }
 
-/* hr はシンプルな区切り線として扱う */
+/* 区切り線 */
 .feature hr{
   margin-top:16px;
   margin-bottom:0;
@@ -186,9 +184,75 @@ p {
   border-top:1px solid #ffffff33;
 }
 
-/* -------------------------
-   SCROLL アニメーション用
--------------------------- */
+/* =======================
+   FEATURE 個別調整
+======================= */
+
+.feature-tunagaru{
+  margin-top: 40px;
+}
+
+.feature-hiraku .feature-img-wrap{
+  margin-right: 10px;
+}
+
+.feature-hiraku .feature-text{
+  margin-top: 40px;
+}
+
+.feature-tunagaru .feature-text{
+  margin-top: 40px;
+}
+
+.feature-takameau .feature-text{
+  margin-top: 40px;
+}
+
+.feature-takameau .feature-img-wrap{
+  margin-right: 10px;
+}
+
+/* =======================
+   Section02: ともにみる
+======================= */
+
+.feature-tomonimiru{
+  width: 100%;
+}
+
+.feature-tomonimiru .feature-inner{
+  display: block;
+  margin-top: 0;
+}
+
+.feature-tomonimiru .feature-img-wrap{
+  position: static;
+  margin: 0 0 12px;
+}
+
+.feature-tomonimiru .feature-img-wrap img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.feature-tomonimiru .feature-text{
+  position: static;
+  margin-top: 40px;
+  padding: 0;
+  color: #fff;
+}
+
+.feature-tomonimiru .feature-text h2,
+.feature-tomonimiru .feature-text p{
+  color:#fff;
+  text-align: left;
+}
+
+/* =======================
+   SCROLL ANIMATION
+======================= */
+
 .fade-left,
 .fade-right{
   opacity:0;
@@ -201,118 +265,65 @@ p {
   transform:translateY(0);
 }
 
-/* =========================================
-   HEADER（index と同じ雰囲気・SP用）
-========================================= */
-body{
-  background:#ffffff;
-  color:#000;
-  font-family:sans-serif;}
+/* =======================
+   HEADER（SP）
+======================= */
+@media (max-width: 768px) {
 
-/* ヘッダー：フッターと似た薄グレー＆中央メニュー */
-
-.header-logo{ display:none; }
-          /* ロゴは今回は非表示 */
-.toggle-menu-button{ display:none; }   /* ハンバーガーも消す */
-
-.header-site-menu a{
-  font-size:50px;
-  font-weight: 800;
-  color:#111;
-  text-decoration:none;
-}
-.header-site-menu a:hover{
-  opacity:.6;
-
-}
-
-.header-site-menu{
-  color:#111;
-  padding: 0 0 clamp(16px,5vw,60px); /* ← 左右0 */
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:10px;
-  line-height:1;
-}
-
-.header-site-menu ul{
-  list-style:none;
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  padding:0;   
-  padding-left: 30px;
-  margin-bottom: -10px;
-  margin-top: 20px;
-}
-
-.header-site-menu a{ 
-  color:#111; 
-  font-size: clamp(16px, 4.8vw, 82px);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  line-height: 1;
-}
-.header-site-menu a:hover{ opacity:.6; }
-
-@media (max-width: 400px){
+  .header-logo{
+    max-width: 400px;
+    margin-top: 480px;/* 520px */
+    white-space: nowrap;
+  }
+            /* ロゴは今回は非表示 */
+  .toggle-menu-button{ display:none; }   /* ハンバーガーも消す */
+　
+  .header-inner{
+    background-color: #ffffff;
+  }
   .header-site-menu a{
-  font-size:40px;
-  font-weight: 800;
-  color:#000000;
-  text-decoration:none;
-}
-.header-site-menu a:hover{
-  opacity:.6;
+    font-size:40px;
+    font-weight: 800;
+    color:#000000;
+    text-decoration:none;
+  }
+  .header-site-menu a:hover{
+    opacity:.6;
+
+  }
+
+  .header-site-menu{
+    color:#ffffff;
+    padding: 80px 5px 5px; /* ← 左右0 */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0px;
+    line-height:0.5;
+  }
+
+  .header-site-menu ul{
+    list-style:none;
+    display:flex;
+    gap:5px;
+    flex-wrap:wrap;
+    padding:0;   
+    margin-bottom: -10px;
+    margin-top: 5px;
+  }
+  .header-site-menu a:hover{ opacity:.6; }
+
+  .header-inner{
+    background-color: #ffffff;
+    padding-bottom: 20px;
+  }
 
 }
 
-.header-site-menu{
-  color:#000000;
-  padding: 40px 5px 5px; /* ← 左右0 */
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:0px;
-  line-height:0.5;
-}
+/* =======================
+   FOOTER（SP）
+======================= */
 
-.header-site-menu ul{
-  list-style:none;
-  display:flex;
-  gap:5px;
-  flex-wrap:wrap;
-  padding:0;   
-  margin-bottom: -10px;
-  margin-top: 5px;
-}
-.header-site-menu a:hover{ opacity:.6; }
-
-
-
-.main {
-  margin-top: 120px;
-  
-}
-
-.team-header {
-  margin-top: 100px;
-}
-
-.header {
-  padding-top: 40px;
-}
-
-.footer {
-  padding-bottom: 30px;
-}
-}
-
-/* =========================================
-   FOOTER（index と同じ雰囲気・SP用）
-========================================= */
 .footer{
   background:#f3f3f3;
   color:#111;
@@ -350,69 +361,45 @@ body{
   font-size:11px;
 }
 
-.feature-tunagaru {
-  margin-top: 40px;
-}
+/* =======================
+   RESPONSIVE
+======================= */
 
-.feature-hiraku .feature-img-wrap{
-  margin-right: 10px;
-}
+@media (max-width: 400px){
 
-.feature-tunagaru .feature-text{
-  margin-top: 40px;
-}
+  .header-site-menu{
+    color:#000000;
+    padding: 40px 5px 5px;
+    gap:0px;
+    line-height:0.5;
+  }
 
-.feature-takameau .feature-text {
-  margin-top: 40px;
-}
+  .header-site-menu ul{
+    gap:5px;
+    margin-bottom: -10px;
+    margin-top: 5px;
+  }
 
-.feature-hiraku .feature-text {
-  margin-top: 40px;
-}
+  .header-site-menu a{
+    font-size:40px;
+    color:#000000;
+  }
 
+  .main{
+    margin-top: 120px;
+  }
 
-.feature-takameau .feature-img-wrap{
-  margin-right: 10px;
-}
+  .team-header{
+    margin-top: 100px;
+  }
 
-/* =========================================
-   Section02: ともにみる（縦並び）
-========================================= */
+  .header{
+    padding-top: 40px;
+  }
 
-.feature-tomonimiru{
-  width: 100%;
-}
-
-/* PCの row-reverse / margin-top をリセット */
-.feature-tomonimiru .feature-inner{
-  display: block;
-  margin-top: 0;
-}
-
-/* 画像はふつうに上に表示 */
-.feature-tomonimiru .feature-img-wrap{
-  position: static;
-  margin: 0 0 12px;
-}
-
-.feature-tomonimiru .feature-img-wrap img{
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* テキストは画像の下に縦並びで */
-.feature-tomonimiru .feature-text{
-  position: static;
-  margin-top: 40px;
-  padding: 0 ;
-  color: #fff;
-}
-
-.feature-tomonimiru .feature-text h2,
-.feature-tomonimiru .feature-text p{
-  color:#fff;
-  text-align: left;
+  .footer{
+    padding-bottom: 30px;
+  }
 }
 
 @media (max-width: 768px){
@@ -424,18 +411,18 @@ body{
   }
 
   .feature-img-wrap img{
-    width:100vw;   /* ← 画面幅にジャスト */
+    width:100vw;
     max-width:100%;
     display:block;
   }
 }
-/* hero 以外の画像を小さく＆中央寄せ */
+
 @media (max-width: 768px){
 
   .feature-img-wrap{
-    width: 75%;          /* だいたい 4/3 小さく ≒ 今の 0.75倍 */
+    width: 75%;
     max-width: 75%;
-    margin: 0 auto 12px; /* 中央寄せ＋下に少し余白 */
+    margin: 0 auto 12px;
   }
 
   .feature-img-wrap img{
@@ -445,11 +432,8 @@ body{
   }
 
   .feature-tunagaru .feature-img-wrap{
-  margin: 0;
-  max-width: 90%;
-  width: 90%;     
-  align-items: center;
+    max-width: 90%;
+    width: 90%;
+    margin: 0 auto;
+  }
 }
-
-}
-

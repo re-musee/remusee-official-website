@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+/* =========================
+   0) Reset / Base / Variables
+========================= */
+
 ::before,
 ::after {
   padding: 0;
@@ -32,7 +36,7 @@ img {
 :root{
   --bg: #ffffff;
   --ink: #0b0b0b;
-  --muted: #c2c2c2;
+  --muted: #6d6b6b;
   --line: #e6e6e6;
   --accent: #2e0850;
   
@@ -43,13 +47,15 @@ a {
   text-decoration: none;
 }
 
-
-
 h1{ font-size: clamp(40px, 8vw, 160px); font-weight: 700; letter-spacing: -0.03em; }
 h2{ font-size: clamp(28px, 5vw, 50px); font-weight: 700; letter-spacing: -0.02em; text-align: center; }
 h3{ font-size: clamp(20px, 3vw, 28px); font-weight: 600; }
 
 
+
+/* =========================
+   1) Header
+========================= */
 
 .header{
   background-color: #0a0a0a;
@@ -64,12 +70,10 @@ h3{ font-size: clamp(20px, 3vw, 28px); font-weight: 600; }
   text-align: center;
   font-size:  clamp(48px, 20vw, 300px);
   font-family:  "arial", sans-serif;
-font-weight: 900;
-font-style: normal;;
-margin-bottom: 0;
+  font-weight: 900;
+  font-style: normal;;
+  margin-bottom: 0;
 }
-
-
 
 .menu{
   padding-top: 10px;
@@ -93,54 +97,52 @@ margin-bottom: 0;
 
 @media (max-width: 768px) {
 
-.header-logo{
-  max-width: 400px;
-  margin-top: 480px;/* 520px */
-  white-space: nowrap;
- }
-          /* ロゴは今回は非表示 */
-.toggle-menu-button{ display:none; }   /* ハンバーガーも消す */
+  .header-logo{
+    max-width: 400px;
+    margin-top: 480px;/* 520px */
+    white-space: nowrap;
+  }
+            /* ロゴは今回は非表示 */
+  .toggle-menu-button{ display:none; }   /* ハンバーガーも消す */
 
-.header-site-menu a{
-  font-size:40px;
-  font-weight: 800;
-  color:#ffffff;
-  text-decoration:none;
-}
-.header-site-menu a:hover{
-  opacity:.6;
+  .header-site-menu a{
+    font-size:40px;
+    font-weight: 800;
+    color:#ffffff;
+    text-decoration:none;
+  }
+  .header-site-menu a:hover{
+    opacity:.6;
 
-}
+  }
 
-.header-site-menu{
-  color:#ffffff;
-  padding: 80px 5px 5px; /* ← 左右0 */
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:0px;
-  line-height:0.5;
-}
+  .header-site-menu{
+    color:#ffffff;
+    padding: 80px 5px 5px; /* ← 左右0 */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0px;
+    line-height:0.5;
+  }
 
-.header-site-menu ul{
-  list-style:none;
-  display:flex;
-  gap:5px;
-  flex-wrap:wrap;
-  padding:0;   
-  margin-bottom: -10px;
-  margin-top: 5px;
-}
-.header-site-menu a:hover{ opacity:.6; }
-
-
+  .header-site-menu ul{
+    list-style:none;
+    display:flex;
+    gap:5px;
+    flex-wrap:wrap;
+    padding:0;   
+    margin-bottom: -10px;
+    margin-top: 5px;
+  }
+  .header-site-menu a:hover{ opacity:.6; }
 }
 
 
 
 
 /* ===========================
-   HERO（画像そのまま版）
+   2) HERO（画像そのまま版）
 =========================== */
 
 .hero{
@@ -161,18 +163,17 @@ margin-bottom: 0;
   height: auto;
 }
 
-
-
-
 /* アイコンロゴ */
 .hero-logo img{
   display: block;
   width: clamp(100px, 40vw, 400px);
   transform: translateY(-60px);
   position: absolute;
-}.hero-logo{
+}
+.hero-logo{
   display: flex;
-  align-items: center;   }
+  align-items: center;
+}
 
 /* テキスト部分 */
 .hero-copy .lead{
@@ -291,48 +292,44 @@ margin-bottom: 0;
     color: #000;
   }
 
-
-.hero-copy{
-  padding: 20px;
-}
-
-/* スマホ時：ABOUT US の大きい文字を画像の上に重ねる */
-@media (max-width: 768px){
-
-  .hero{
-    position: relative;  /* 基準になる箱 */
+  .hero-copy{
+    padding: 20px;
   }
 
-  .hero-title-large{
-    position: absolute;
-    top: 185px;              /* 画像の上端からの距離（お好みで調整） */
-    left: 45%;
-    transform: translateX(-50%);
-    margin: 0;
-    font-size: clamp(32px, 15vw, 70px);
-    color: #ffffff;         /* 画像の上なので白 */
-    line-height: 1;
-    pointer-events: none;
-    z-index: 2;             /* 画像より前面に出す */
-    white-space: nowrap;
-  }
-}
+  /* スマホ時：ABOUT US の大きい文字を画像の上に重ねる */
+  @media (max-width: 768px){
 
-@media (max-width: 768px){
+    .hero{
+      position: relative;  /* 基準になる箱 */
+    }
 
-  .hero{
-    height: auto;          /* スマホは高さ自動でOK */
-  }
-
-  .hero-inner{
-    position: static;      /* スマホでは重ねず、今まで通り下に出す */
+    .hero-title-large{
+      position: absolute;
+      top: 185px;              /* 画像の上端からの距離（お好みで調整） */
+      left: 45%;
+      transform: translateX(-50%);
+      margin: 0;
+      font-size: clamp(32px, 15vw, 70px);
+      color: #ffffff;         /* 画像の上なので白 */
+      line-height: 1;
+      pointer-events: none;
+      z-index: 2;             /* 画像より前面に出す */
+      white-space: nowrap;
+    }
   }
 
-  /* （あなたの元からある hero のスマホ用指定はそのまま残してOK） */
-}
+  @media (max-width: 768px){
 
+    .hero{
+      height: auto;          /* スマホは高さ自動でOK */
+    }
 
+    .hero-inner{
+      position: static;      /* スマホでは重ねず、今まで通り下に出す */
+    }
 
+    /* （あなたの元からある hero のスマホ用指定はそのまま残してOK） */
+  }
 }
 
 /* ボタン */
@@ -349,6 +346,7 @@ margin-bottom: 0;
   
   font-size: clamp(16px, 1vw, 25px);
 }
+
 .hero-title-large{
   position: absolute;
   bottom: 0px;
@@ -361,9 +359,14 @@ margin-bottom: 0;
   font-weight: 1400;
   margin-bottom: 20px;
 }
+
 .btn:hover{ background: rgba(255,255,255,.24); }
 
 
+
+/* =========================
+   3) OUR TEAM
+========================= */
 
 .ourteam{
   width:100vw;
@@ -379,7 +382,6 @@ margin-bottom: 0;
   -webkit-overflow-scrolling:touch;
   text-align:left;
   display:block;
-  
 }
 
 .ourteam h2 {
@@ -387,6 +389,7 @@ margin-bottom: 0;
   margin-top: -15px;
   margin-bottom: 0px;
 }
+
 .slider{
   display:flex;
   gap:40px;
@@ -425,21 +428,22 @@ margin-bottom: 0;
 }
 .img-wrap:hover .caption{ opacity:1; transform: translateY(0); }
 
-
 @media (max-width: 768px){
-.ourteam h2 {
-  font-size: clamp(20px, 4vw, 30px);
+
+  .ourteam h2 {
+    font-size: clamp(20px, 10vw, 60px);
+  }
+
+  .ourteam {
+    margin-top: 0%;
+    padding-top: 0%;
+  }
 }
 
-.ourteam {
-  margin-top: 0%;
-  padding-top: 0%;
-}
 
 
-}
-/* ============/* ======================
-   SNS セクション（元の状態）
+/* ======================
+   4) SNS セクション（元の状態）
 ====================== */
 
 .sns{
@@ -622,8 +626,11 @@ margin-bottom: 0;
     right: 0;
   }
 }
+
+
+
 /* =======================
-   BLOG セクション（画像レイアウト）
+   5) BLOG セクション（画像レイアウト）
 ======================= */
 
 .blog{
@@ -655,13 +662,13 @@ margin-bottom: 0;
   padding-top: 0px;
   line-height: 1;
   margin-top: 0px;
+  
 }
 
 /* 枠全体 */
 .blog-table{
   border-top: 1px solid #000;
   border-bottom: 1px solid #000000;
-
 }
 
 /* 各行（リンク全体がクリック範囲） */
@@ -691,11 +698,10 @@ margin-bottom: 0;
   background: #2e0850;
 }
 
-/* 日付カラム（08.01 / 25 を縦に） */
 .blog-date{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: right;
   font-weight: 800;
   font-size: 14px;
   letter-spacing: 0.02em;
@@ -703,18 +709,27 @@ margin-bottom: 0;
 }
 .blog-date-top{
   margin-bottom: 4px;
+  color: #838181;
 }
 
 /* タイトル＋more */
+/* まず blog-text を縦並びにする */
 .blog-text{
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
+
+/* more を一番下へ押し下げて、右寄せ */
+.blog-text .blog-more{
+  margin-top: auto;
+  align-self: flex-end;
+}
+
 .blog-ttl{
   font-weight: 800;
   font-size: 16px;
   line-height: 1.3;
+  padding-left: 80px;
 }
 .blog-more{
   font-size: 12px;
@@ -724,6 +739,8 @@ margin-bottom: 0;
 .blog-excerpt{
   font-size: 14px;
   line-height: 1.6;
+  max-width: 520px;
+  padding-right: 40px;
 }
 
 /* 行ホバー時の薄いハイライト */
@@ -762,7 +779,9 @@ margin-bottom: 0;
 .blog-date{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: end;
+  padding-right:-30px;
+  padding-left: 60px;
   font-weight: 800;
   font-size: 14px;
   letter-spacing: 0.02em;
@@ -782,12 +801,27 @@ margin-bottom: 0;
   top: 0;
   bottom: 0;
   /* 1列目(140px) + ギャップ(16px) + 2列目(80px) の位置 */
-  left: calc(140px + 16px + 80px);
+  left: calc(200px + 30px + 80px);
   width: 1px;
   background: #000;
   pointer-events: none;
-
 }
+
+.blog-row{
+  position: relative;
+}
+
+.blog-more{
+  position: absolute;
+  right: 20px; 
+  bottom: 10px;         /* 右端 */
+  top: 50%;
+  transform: translateY(-50%); /* 縦中央（今のデザインに近い） */
+  font-size: 14px;
+  color: #777;
+}
+
+
 
 /* BLOG スマホレイアウト調整 */
 @media (max-width: 768px){
@@ -822,15 +856,18 @@ margin-bottom: 0;
     flex-direction: row;
     justify-content: flex-start;
     align-items: baseline;
+    
     gap: 8px;
     font-size: 12px;
+  }
+
+  .blog-ttl{
+    padding: 0;
   }
 
   .blog-text{
     grid-column: 2;
   }
-
- 
 
   /* スマホでは縦の罫線は消してスッキリさせる */
   .blog-table::before{
@@ -840,6 +877,9 @@ margin-bottom: 0;
 
 
 
+/* =========================
+   6) Footer
+========================= */
 
 .footer{
   background:#f3f3f3;
@@ -853,8 +893,6 @@ margin-bottom: 0;
 .menu2 a:hover{ opacity:.6; }
 
 @media (max-width:640px){
-
-  
 
   footer{
     background:#f3f3f3;
@@ -900,7 +938,12 @@ margin-bottom: 0;
   color: #2e0850;
 }
 
-/* ==== 汎用ボタン（ABOUT / TEAM / SNS 共通） ==== */
+
+
+/* =========================
+   7) 共通ボタン（ABOUT / TEAM / SNS 共通）
+========================= */
+
 a.link-button-a{
   display: inline-flex;
   align-items: center;          /* 縦中央 */
@@ -936,18 +979,17 @@ a.link-button-a{
   margin: 24px auto 60px;       /* 左右autoで中央 */
 }
 
-
 @media (max-width: 768px) {
   .ourteam{
-  width:100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  background:#fff;
-  margin-top: 10vh;
-  text-align: center;           /* ← h2 とボタンを中央に */
+    width:100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background:#fff;
+    margin-top: 10vh;
+    text-align: center;           /* ← h2 とボタンを中央に */
+  }
 }
 
-}
 /* SNS のボタンは左寄せのまま */
 .sns-left .link-button-a{
   margin-top: 24px;
@@ -967,7 +1009,88 @@ a.link-button-a:active{
   transform: translateY(0);
   box-shadow:0 3px 6px rgba(0,0,0,.1);
 }
+/* ボタン共通（SNSボタンと同じ見た目に統一） */
+a.link-button-a,
+.blog-viewall,
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
+  padding: 10px 28px;
+  border-radius: 999px;
+
+  background-color: #c2c2c2;
+  color: #2e0850;
+
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .03em;
+
+  text-decoration: none;
+  border: none;
+  white-space: nowrap;
+  width: 70px;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+/* hover/active も統一 */
+a.link-button-a:hover,
+.blog-viewall:hover,
+.btn:hover{
+  background-color:#d4d4d4;
+  transform: translateY(-2px);
+  box-shadow:0 6px 16px rgba(0,0,0,.15);
+}
+a.link-button-a:active,
+.blog-viewall:active,
+.btn:active{
+  transform: translateY(0);
+  box-shadow:0 3px 6px rgba(0,0,0,.1);
+}
+
+/* ===== BLOGボタンだけSNSボタンと同じ見た目にする ===== */
+.blog-viewall{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;            /* ← 横長バーをやめる */
+  min-width: 140px;
+  height: auto;
+
+  padding: 10px 28px;
+  margin: 45px auto 0;
+
+  background-color:#c2c2c2;
+  color:#2e0850;
+
+  border-radius:999px;
+  font-weight:700;
+  font-size:14px;
+  letter-spacing:.03em;
+  text-decoration:none;
+
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+  border:none;
+  white-space: nowrap;
+}
+
+.blog-viewall:hover{
+  background-color:#d4d4d4;
+  transform: translateY(-2px);
+  box-shadow:0 6px 16px rgba(0,0,0,.15);
+}
+
+.blog-viewall:active{
+  transform: translateY(0);
+  box-shadow:0 3px 6px rgba(0,0,0,.1);
+}
+
+.blog-viewall{
+  text-align: center;
+}
 
 
 

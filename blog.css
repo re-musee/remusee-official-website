@@ -1,15 +1,18 @@
 @charset "utf-8";
 
-/* ====== このページ用のベース ====== */
+/* =======================
+   BASE
+======================= */
 body{
   background:#ffffff;
   color:#000;
-  font-family:sans-serif;}
+  font-family:sans-serif;
+}
 
-/* ヘッダー：フッターと似た薄グレー＆中央メニュー */
-
+/* =======================
+   HEADER
+======================= */
 .header-logo{ display:none; }
-          /* ロゴは今回は非表示 */
 .toggle-menu-button{ display:none; }   /* ハンバーガーも消す */
 
 .header-site-menu a{
@@ -20,7 +23,6 @@ body{
 }
 .header-site-menu a:hover{
   opacity:.6;
-
 }
 
 .header-site-menu{
@@ -54,59 +56,56 @@ body{
 }
 .header-site-menu a:hover{ opacity:.6; }
 
-@media (max-width: 400px){
+@media (max-width: 768px) {
+
+  .header-logo{
+    max-width: 400px;
+    margin-top: 480px;/* 520px */
+    white-space: nowrap;
+  }
+            /* ロゴは今回は非表示 */
+  .toggle-menu-button{ display:none; }   /* ハンバーガーも消す */
+
   .header-site-menu a{
-  font-size:40px;
-  font-weight: 800;
-  color:#000000;
-  text-decoration:none;
-}
-.header-site-menu a:hover{
-  opacity:.6;
+    font-size:40px;
+    font-weight: 800;
+    color:#000000;
+    text-decoration:none;
+  }
+  .header-site-menu a:hover{
+    opacity:.6;
 
-}
+  }
 
-.header-site-menu{
-  color:#000000;
-  padding: 40px 5px 5px; /* ← 左右0 */
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:0px;
-  line-height:0.5;
-}
+  .header-site-menu{
+    color:#ffffff;
+    padding: 80px 5px 5px; /* ← 左右0 */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0px;
+    line-height:0.5;
+  }
 
-.header-site-menu ul{
-  list-style:none;
-  display:flex;
-  gap:5px;
-  flex-wrap:wrap;
-  padding:0;   
-  margin-bottom: -10px;
-  margin-top: 5px;
-}
-.header-site-menu a:hover{ opacity:.6; }
-
-
-
-.main {
-  margin-top: 120px;
-  padding-top: 40px;
+  .header-site-menu ul{
+    list-style:none;
+    display:flex;
+    gap:5px;
+    flex-wrap:wrap;
+    padding:0;   
+    margin-bottom: -10px;
+    margin-top: 5px;
+  }
+  .header-site-menu a:hover{ opacity:.6; }
+  .footer {
+    padding-bottom: 30px;
+  }
 }
 
-.team-header {
-  margin-top: 100px;
-}
 
-.header {
-  margin-top: 40px;
-}
-
-.footer {
-  padding-bottom: 30px;
-}
-}
-/* ====== アーカイブ全体 ====== */
+/* =======================
+   BLOG ARCHIVE
+======================= */
 .blog-main{
   background:#ffffff;
 }
@@ -140,11 +139,11 @@ body{
   letter-spacing:-0.04em;
 }
 
-/* カテゴリボタン：中央に横一列 */
+/* カテゴリボタン */
 .blog-archive-filter{
   display:flex;
   flex-wrap:wrap;
-  justify-content:flex-end;        /* ←中央寄せ */
+  justify-content:flex-end;
   gap:8px 16px;
   margin:24px 0 32px;
 }
@@ -163,46 +162,46 @@ body{
   border-color:#111;
 }
 
-/* ====== グリッド（線付き） ====== */
+/* グリッド */
 .blog-card-list{
   list-style:none;
   margin:0;
   padding:0;
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  /* グリッド線 */
   border-top:1px solid #d0d0d0;
   border-left:1px solid #d0d0d0;
 }
 .blog-card{
   border-right:1px solid #d0d0d0;
   border-bottom:1px solid #d0d0d0;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: auto;
+  position: relative;
 }
 
-/* カードの中身を縦方向のflexにする */
 .blog-card a{
   display:flex;
   flex-direction:column;
-  height:100%;
+  
   color:inherit;
   text-decoration:none;
   padding:20px 20px;
 }
+
 .blog-card-thumb{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
+  
+  object-fit: cover;
+  
 }
 
 .blog-card-thumb img{
-  width:auto;
-  height:100%;
-  max-width:100%;
-  max-height:100%;
-  object-fit:contain;
-  object-position:center;  /* ←ここが重要！ */
+  width: 100%;
+  margin: 0;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  object-fit:cover;
+  display: block;
+  padding: 0%;
 }
 .blog-card:hover img{
   transform:scale(1.04);
@@ -216,17 +215,17 @@ body{
   font-size:15px;
   text-transform:uppercase;
   margin-bottom:6px;
-  margin-top: 20pxpx;
+  margin-top: 20px;
 }
 .blog-card-cat{
   font-weight:700;
   letter-spacing:.08em;
+  color: #9a9898;
 }
 .blog-card-date{
   color:#777;
 }
 
-/* タイトル＆概要テキスト */
 .blog-card-title{
   font-size:20px;
   font-weight:700;
@@ -241,21 +240,25 @@ body{
   color:#555;
   margin: 5px 5px 0;
   text-align:start;
-  flex:1 1 auto;    /* ← 余白をここに持たせて下を押す */
+  flex:1 1 auto;
+  padding-bottom: 20px;
 }
 
 .blog-card-more{
-  margin-top:8px;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
   font-size:16px;
   text-align:right;
   color:#777;
   letter-spacing:.04em;
+  padding-top: 20px;
 }
 .blog-card a:hover .blog-card-more{
   text-decoration:underline;
 }
 
-/* ====== 下の丸いボタン ====== */
+/* 下の丸いボタン */
 .blog-more-btn{
   display:block;
   margin:40px auto 40px;
@@ -273,13 +276,13 @@ body{
   filter:brightness(.95);
 }
 
-/* ====== レスポンシブ ====== */
+
+
+/* レスポンシブ */
 @media (max-width:768px){
   .blog-card-list{
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
-
-
 }
 
 @media (max-width:640px){
@@ -292,6 +295,9 @@ body{
 }
 
 
+/* =======================
+   FOOTER
+======================= */
 .footer{
   background:#f3f3f3;
   color:#111;
@@ -304,16 +310,13 @@ body{
 .menu2 a:hover{ opacity:.6; }
 
 @media (max-width:640px){
-
-  
-
   footer{
     background:#f3f3f3;
     color:#111;
-    padding: opx ; /* ← 上下の余白は戻す！ */
+    padding: opx ;
     margin-left: 0px;
     margin-left: 0px;
-    margin-top: 60px; /* ブログとの間隔 */
+    margin-top: 60px;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -332,7 +335,6 @@ body{
     justify-content:center;
   }
 
-  /* フッター内リンク */
   .menu2 a{
     color:#111;
     font-size:14px;
@@ -342,34 +344,29 @@ body{
     padding: 0px;
   }
 
-
-
-    /* ★ここを追加：高さ固定を解除 */
   .blog-card{
-    aspect-ratio: auto;     /* or unset でもOK */
+    aspect-ratio: auto;
   }
 
   .blog-card a{
-    height: auto;           /* 中身も自動高さに */
+    height: auto;
   }
 
   .blog-more-btn{
-  display:block;
-  margin:0px auto 40px;
-  padding:10px 40px;
-  border-radius:999px;
-  border:none;
-  background:#d1d1d1;
-  color:#2e0850;
-  font-weight:700;
-  font-size:13px;
-  letter-spacing:.06em;
-  cursor:pointer;
-}
-body {
-  margin: 0;
-}
+    display:block;
+    margin:0px auto 40px;
+    padding:10px 40px;
+    border-radius:999px;
+    border:none;
+    background:#d1d1d1;
+    color:#2e0850;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.06em;
+    cursor:pointer;
+  }
 
-
+  body {
+    margin: 0;
+  }
 }
-
