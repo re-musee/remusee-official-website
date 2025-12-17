@@ -342,3 +342,15 @@ ul{
     font-size:14px;
   }
 }
+.menu a{
+  font-size: clamp(16px, 4.8vw, 82px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+@media (max-width: 768px){
+  .menu a{
+    font-size: 40px; /* ← indexと同じにしたいならこれ */
+  }
+}
