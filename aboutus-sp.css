@@ -545,3 +545,22 @@ p {
     font-size: 40px; /* ← indexと同じにしたいならこれ */
   }
 }
+
+/* ===== ヘッダー（ABOUT US）を index と同じ指定で上書き ===== */
+/* すでに ul に class="menu" が付いてるので .menu a を基準に統一する */
+
+.header-site-menu .menu a{
+  font-size: clamp(16px, 4.8vw, 82px);  /* indexと同じ */
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: #111; /* aboutusは白背景なので黒字 */
+}
+
+@media (max-width: 768px){
+  .header-site-menu .menu a{
+    font-size: 40px; /* indexのSPと同じ */
+    color: #111;     /* aboutusは黒字 */
+  }
+}
+
