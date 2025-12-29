@@ -478,3 +478,19 @@ hr {
 .feature-text{
   max-width: 60ch; /* 読みやすい行幅（任意） */
 }
+
+:root{
+  --font-sans: "Montserrat", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 全体の基本フォント */
+html, body{
+  font-family: var(--font-sans);
+}
+
+/* メニューだけ確実に統一したいなら追い打ち */
+.menu a,
+.header-site-menu a{
+  font-family: var(--font-sans);
+}
+
