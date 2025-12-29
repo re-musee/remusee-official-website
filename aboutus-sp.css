@@ -564,3 +564,19 @@ p {
   }
 }
 
+:root{
+  --font-sans: "Montserrat", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 全体の基本フォント */
+html, body{
+  font-family: var(--font-sans);
+}
+
+
+.menu a,
+.header-site-menu a{
+  font-family: var(--font-sans);
+}
+
+
