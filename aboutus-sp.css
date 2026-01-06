@@ -57,6 +57,7 @@ p{
   text-transform:uppercase;
   letter-spacing:-0.02em;
   line-height:1;
+  ext-align:left;
 }
 
 .header-site-menu a:hover{ opacity:.6; }
