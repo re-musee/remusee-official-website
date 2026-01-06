@@ -77,8 +77,7 @@ p{
   .toggle-menu-button{ display:none; }   /* ハンバーガーも消す */
 
   .header-site-menu a{
-    font-size:40px;
-    font-weight: 800;
+    font-size:  clamp(48px, 20vw, 300px);
     color:#000000;
     text-decoration:none;
   }
@@ -398,4 +397,4 @@ p{
   height: auto;
 }
 
-.hero {background:url("aboutus-main.png") center / cover no-repeat;}
+
