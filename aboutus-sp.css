@@ -372,7 +372,7 @@ p {
   }
             /* ロゴは今回は非表示 */
   .toggle-menu-button{ display:none; }   /* ハンバーガーも消す */
-
+　
   .header-inner{
     background-color: #ffffff;
   }
@@ -505,10 +505,21 @@ p {
     width:100%;
   }
 
+  .feature-img-wrap img{
+    width:100vw;
+    max-width:100%;
+    display:block;
+  }
 }
+
 @media (max-width: 768px){
 
-  
+  .feature-img-wrap{
+    width: 75%;
+    max-width: 75%;
+    margin: 0 auto 12px;
+  }
+
   .feature-img-wrap img{
     width: 100%;
     height: auto;
