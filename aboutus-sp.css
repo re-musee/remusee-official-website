@@ -1,0 +1,357 @@
+@charset "utf-8";
+
+/* =========================================
+   ABOUT US - SP layout (max-width: 768px)
+   ※このファイルはHTML側で media="(max-width: 768px)" で読み込む想定
+========================================= */
+
+/* =======================
+   BASE
+======================= */
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:#141414;   /* mainと合わせる */
+  color:#ffffff;
+}
+
+p{
+  font-size: clamp(14px, 1.2vw, 56px);
+}
+
+/* =======================
+   HEADER
+======================= */
+.header-logo{ display:none; }
+.toggle-menu-button{ display:none; }
+
+.header-inner{
+  background:#ffffff;
+  padding-bottom:20px;
+}
+
+.header-site-menu{
+  padding: 80px 5px 5px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0;
+  line-height:0.5;
+}
+
+.header-site-menu ul{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:5px;
+  padding:0;
+  margin: 5px 0 -10px;
+}
+
+.header-site-menu a{
+  color:#111;
+  font-size:40px;
+  font-weight:800;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:-0.02em;
+  line-height:1;
+}
+
+.header-site-menu a:hover{ opacity:.6; }
+
+/* ヘッダーメニュー文字サイズ統一（念のため .menu 優先） */
+.menu a{
+  font-size:40px;
+  font-weight:800;
+  letter-spacing:-0.02em;
+  line-height:1;
+  color:#111;
+}
+
+/* =======================
+   MAIN / SECTION COMMON
+======================= */
+.main{
+  background:#141414;
+  color:#ffffff;
+  margin-top:0;
+}
+
+/* section は横幅いっぱい＋左右余白20px */
+.hero,
+.mv-row,
+.feature{
+  width:100%;
+  box-sizing:border-box;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+/* =======================
+   HERO
+======================= */
+.hero{
+  padding-top:72px;
+  padding-bottom:56px;
+  width:100vw;
+  height:300px;
+  background:url("aboutus-main.png") center / cover no-repeat;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    0deg,
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.15)
+  );
+}
+
+.hero-title{
+  z-index:1;
+  margin:0;
+  font-size:clamp(40px, 16vw, 60px);
+  line-height:1;
+  letter-spacing:-0.05em;
+  text-transform:uppercase;
+}
+
+/* =======================
+   Mission / Vision
+======================= */
+.mv-row{
+  padding-top:0;
+  padding-bottom:32px;
+
+  /* ✅ スマホは上下 */
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+.mv-col{
+  width:100%;
+  max-width:100%;
+  font-size:13px;
+  line-height:1.8;
+}
+
+.mv-col h3{
+  margin:0 0 4px;
+  font-size:24px;
+  font-weight:700;
+}
+
+.mv-col-left,
+.mv-col-right{
+  margin-top:0;
+  padding-top:0;
+  text-align:left;
+}
+
+/* =======================
+   FEATURE 共通
+======================= */
+.feature{
+  padding-top:32px;
+  padding-bottom:40px;
+}
+
+.feature-inner,
+.feature-inner-kotoba{
+  max-width:100%;
+  display:block;
+  position:static;
+  margin-top:0;
+}
+
+/* 画像 */
+.feature-img-wrap{
+  width:100%;
+  max-width:100%;
+  margin:0 0 12px;
+  padding:0;
+  overflow:hidden;
+}
+
+.feature-img-wrap img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+}
+
+/* テキスト */
+.feature-text{
+  width:100%;
+  max-width:100%;
+  font-size:13px;
+  line-height:1.8;
+}
+
+.feature-text h2{
+  margin:0 0 8px;
+  font-size:18px;
+  font-weight:700;
+}
+
+/* PC用ずらし解除（SPで必ず左寄せにする） */
+.feature-hiraku .feature-text-right,
+.feature-tomonimiru .feature-text-left,
+.feature-tunagaru .feature-text-left,
+.feature-takameau .feature-text-right{
+  margin:0;
+  text-align:left;
+}
+
+.feature-kotoba .feature-text-left{
+  max-width:100%;
+  margin:0;
+}
+
+/* 区切り線 */
+.feature hr{
+  margin-top:16px;
+  margin-bottom:0;
+  border:none;
+  border-top:1px solid #ffffff33;
+}
+
+/* =======================
+   FEATURE 個別調整（最低限）
+======================= */
+.feature-hiraku .feature-text,
+.feature-tunagaru .feature-text,
+.feature-takameau .feature-text{
+  margin-top:40px;
+}
+
+.feature-tunagaru{
+  margin-top:40px;
+}
+
+/* ともにみる */
+.feature-tomonimiru .feature-text{
+  margin-top:40px;
+  padding:0;
+  color:#fff;
+}
+
+.feature-tomonimiru .feature-text h2,
+.feature-tomonimiru .feature-text p{
+  color:#fff;
+  text-align:left;
+}
+
+/* =======================
+   SCROLL ANIMATION
+======================= */
+.fade-left,
+.fade-right{
+  opacity:0;
+  transform:translateY(20px);
+  transition:all .8s ease-out;
+}
+
+.is-show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* =======================
+   FOOTER
+======================= */
+.footer{
+  background:#f3f3f3;
+  color:#111;
+  padding:32px 16px 24px;
+  border-top:1px solid #e6e6e6;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:16px;
+  box-sizing:border-box;
+}
+
+.footer-site-menu ul{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  padding:0;
+  margin:0;
+}
+
+.footer-site-menu a{
+  color:#111;
+  font-size:12px;
+  text-decoration:none;
+}
+
+.footer-site-menu a:hover{ opacity:.6; }
+
+.copyright{
+  margin:0;
+  font-size:11px;
+}
+
+/* =======================
+   さらに小さい端末（max-width:400px）
+======================= */
+@media (max-width: 400px){
+  .header-site-menu{
+    padding:40px 5px 5px;
+    line-height:0.5;
+  }
+
+  .header-site-menu a,
+  .menu a{
+    font-size:40px;
+  }
+
+  .footer{
+    padding-bottom:30px;
+  }
+}
+/* =======================
+   SPでPCの"ずらし演出"を完全に無効化（被り対策）
+======================= */
+
+/* まず全部のセクションで「ずらし」を殺す */
+.feature,
+.mv-row,
+.hero{
+  overflow: hidden; /* 万一のはみ出しも隠す */
+}
+
+/* PC側のflex/position/固定幅/ずらしを上書き */
+.feature-inner,
+.feature-text,
+.feature-img-wrap{
+  position: static !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+/* PC側で個別に入れてたマイナスmarginを確実に無効化 */
+.feature-tomonimiru .feature-inner,
+.feature-hiraku .feature-inner,
+.feature-tunagaru .feature-inner,
+.feature-takameau .feature-inner{
+  margin-top: 0 !important;
+}
+
+/* 画像が変に縮んだり被らないように */
+.feature-img-wrap img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
