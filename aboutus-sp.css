@@ -397,3 +397,5 @@ p{
   width: 100%;
   height: auto;
 }
+
+.hero {background:url("aboutus-main.png") center / cover no-repeat;}
