@@ -315,6 +315,11 @@ body{
 text-decoration: none; }
 .menu2 a:hover{ opacity:.6; }
 
+.blog-card.is-hidden{
+  display: none;
+}
+
+
 @media (max-width:640px){
   footer{
     background:#f3f3f3;
