@@ -87,7 +87,7 @@ a{
 /* --- SP（indexと完全一致） --- */
 @media (max-width:768px){
   .header-site-menu{
-    padding:80px 5px 5px;
+    padding:40px 5px 5px;
     line-height:.5;
   }
 
