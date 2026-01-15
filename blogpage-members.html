@@ -206,6 +206,45 @@
       <p class="footer-mail"></p>
       <p class="copyright"><small>&copy;re-musée</small></p>
     </footer>
+
+        <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = Array.from(document.querySelectorAll(".blog-card"));
+  const btn = document.querySelector(".blog-more-btn");
+
+  if (!cards.length || !btn) return;
+
+  const INITIAL = 9; // 最初に表示する数
+  const STEP = 9;    // 追加表示する数（全部出したいなら 9999 に）
+
+  let visibleCount = 0;
+
+  // 全部いったん隠す
+  cards.forEach(card => card.classList.add("is-hidden"));
+
+  // n件表示する関数
+  function showUpTo(n){
+    cards.slice(0, n).forEach(card => {
+      card.classList.remove("is-hidden");
+    });
+    visibleCount = n;
+
+    // 全部表示されたらボタンを消す
+    if (visibleCount >= cards.length) {
+      btn.style.display = "none";
+    }
+  }
+
+  // 初期表示
+  showUpTo(Math.min(INITIAL, cards.length));
+
+  // ボタンクリック
+  btn.addEventListener("click", () => {
+    showUpTo(Math.min(visibleCount + STEP, cards.length));
+  });
+});
+</script>
+
     </body>
     
     
