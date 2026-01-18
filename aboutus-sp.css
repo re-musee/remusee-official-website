@@ -103,7 +103,7 @@ p{
     gap:5px;
     flex-wrap:wrap;
     padding:0;   
-    margin-bottom: -10px;
+    margin-bottom: 5px;
     margin-top: 5px;
   }
   .header-site-menu a:hover{ opacity:.6; }
