@@ -67,50 +67,7 @@ p{
 }
 .header-site-menu a:hover{ opacity:.6; }
 
-@media (max-width: 768px) {
 
-  .header-logo{
-    max-width: 400px;
-    margin-top: 480px;/* 520px */
-    white-space: nowrap;
-  }
-            /* ロゴは今回は非表示 */
-  .toggle-menu-button{ display:none; }   /* ハンバーガーも消す */
-
-  .header-site-menu a{
-    font-size:  clamp(48px, 20vw, 300px);
-    color:#000000;
-    text-decoration:none;
-  }
-  .header-site-menu a:hover{
-    opacity:.6;
-
-  }
-
-  .header-site-menu{
-    color:#ffffff;
-    padding: 80px 5px 5px; /* ← 左右0 */
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:0px;
-    line-height:0.5;
-  }
-
-  .header-site-menu ul{
-    list-style:none;
-    display:flex;
-    gap:5px;
-    flex-wrap:wrap;
-    padding:0;   
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
-  .header-site-menu a:hover{ opacity:.6; }
-  .footer {
-    padding-bottom: 30px;
-  }
-}
 
 /* =======================
    MAIN / SECTION COMMON
@@ -403,73 +360,42 @@ p{
   text-align: left;
 }
 
-/* =======================
-   HEADER (UNIFIED)
-   ※他ページCSSの一番最後に貼る
-======================= */
-.header-logo{ display:none; }
-.toggle-menu-button{ display:none; }
-
-/* menuの余計な影響があれば揃える（index.css側に.menuがあるため保険） */
-.header-site-menu ul{
-  list-style:none;
-  display:flex;
-  flex-wrap:wrap;
-  padding:0;
+@media (max-width: 768px) {
+.header-logo {
+  margin-top: 20vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
 }
-
-/* PC（blog側と同じ） */
-.header-site-menu{
-  color:#111;
-  padding: 0 0 clamp(16px,5vw,60px);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:10px;
-  line-height:1;
-}
-
-.header-site-menu a{
-  color:#111;
-  font-size: clamp(16px, 4.8vw, 82px);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  line-height: 1;
-  text-decoration:none;
-}
-.header-site-menu a:hover{ opacity:.6; }
-
-/* ULの細かい余白（blog側と同じ） */
-.header-site-menu ul{
-  gap:10px;
-  padding-left: 30px;
-  margin-bottom: -10px;
-  margin-top: 20px;
-}
-
-/* SP（blog側と同じ） */
-@media (max-width: 768px){
-  .header-site-menu{
-    color:#ffffff;
-    padding: 80px 5px 5px;
-    gap:0px;
-    line-height:0.5;
-     padding-bottom:15px
-  }
-
-  .header-site-menu ul{
-    gap:5px;
-    padding-left: 0;
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
 
   .header-site-menu a{
     font-size:40px;
-    font-weight:800;
-    color:#000000;
+    font-weight: 800;
+    color:#111;
     text-decoration:none;
   }
-   
+  .header-site-menu a:hover{
+    opacity:.6;
+
+  }
+
+  .header-site-menu{
+    color:#111;
+    padding: 40px 5px 5px; /* ← 左右0 */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0px;
+    line-height:0.5;
+  }
+
+  .header-site-menu ul{
+    list-style:none;
+    display:flex;
+    gap:5px;
+    flex-wrap:wrap;
+    padding:0;   
+    margin-bottom: -10px;
+    margin-top: 5px;
+  }
+  .header-site-menu a:hover{ opacity:.6; }
 }
