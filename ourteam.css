@@ -84,23 +84,6 @@ a{
 
 .menu a:hover{ opacity:.6; }
 
-/* --- SP（indexと完全一致） --- */
-@media (max-width:768px){
-  .header-site-menu{
-    padding:40px 5px 5px;
-    line-height:.5;
-  }
-
-  .menu{
-    padding-left:0;
-    gap:5px;
-    justify-content:left;
-  }
-
-  .menu a{
-    font-size:40px;
-  }
-}
 
 /* =====================================================
    MAIN
@@ -274,7 +257,7 @@ textarea{
   .header-site-menu a{
     font-size:40px;
     font-weight: 800;
-    color:#0b0b0b;
+    color:#111;
     text-decoration:none;
   }
   .header-site-menu a:hover{
@@ -283,7 +266,7 @@ textarea{
   }
 
   .header-site-menu{
-    color:#0b0b0b;
+    color:#111;
     padding: 40px 5px 5px; /* ← 左右0 */
     display:flex;
     flex-direction:column;
