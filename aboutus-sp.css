@@ -302,20 +302,6 @@ p{
   font-size:11px;
 }
 
-/* =======================
-   さらに小さい端末（max-width:400px）
-======================= */
-@media (max-width: 400px){
-  .header-site-menu{
-    padding:40px 5px 5px;
-    line-height:0.5;
-  }
-
-  .header-site-menu a,
-  .menu a{
-    font-size:40px;
-  }
-
   .footer{
     padding-bottom:30px;
   }
