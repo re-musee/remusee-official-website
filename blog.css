@@ -12,50 +12,88 @@ body{
 /* =======================
    HEADER
 ======================= */
-.header-logo{ display:none; }
-.toggle-menu-button{ display:none; }   /* ハンバーガーも消す */
-
-.header-site-menu a{
-  font-size:50px;
-  font-weight: 800;
+.header{
+  background-color: #fffff;
+  margin: 0;
   color:#111;
-  text-decoration:none;
-}
-.header-site-menu a:hover{
-  opacity:.6;
-}
-
-.header-site-menu{
-  color:#111;
-  padding: 0 0 clamp(16px,5vw,60px); /* ← 左右0 */
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:10px;
-  line-height:1;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
 }
 
-.header-site-menu ul{
-  list-style:none;
+.header-inner h1 {
+  text-align: center;
+  font-size:  clamp(48px, 20vw, 300px);
+  font-family:  "arial", sans-serif;
+  font-weight: 900;
+  font-style: normal;;
+  margin-bottom: 0;
+}
+.header-logo {
+  margin-top: 45vh;
+  margin-left: 3vw;
+  margin-right: 3vw;
+}
+
+.menu{
+  padding-top: 10px;
   display:flex;
-  gap:10px;
   flex-wrap:wrap;
-  padding:0;   
-  padding-left: 30px;
-  margin-bottom: -10px;
-  margin-top: 20px;
+  gap: clamp(5px, 0.5vw, 0px);
+  
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.header-site-menu a{ 
-  color:#111; 
+.menu a{
   font-size: clamp(16px, 4.8vw, 82px);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: -0.02em;
+  color:#fff;
   line-height: 1;
 }
-.header-site-menu a:hover{ opacity:.6; }
+.menu a:hover{ opacity:.6; }
 
+@media (max-width: 768px) {
+.header-logo {
+  margin-top: 20vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+  .header-site-menu a{
+    font-size:40px;
+    font-weight: 800;
+    color:#111;
+    text-decoration:none;
+  }
+  .header-site-menu a:hover{
+    opacity:.6;
+
+  }
+
+  .header-site-menu{
+    color:#111;
+    padding: 40px 5px 5px; /* ← 左右0 */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0px;
+    line-height:0.5;
+  }
+
+  .header-site-menu ul{
+    list-style:none;
+    display:flex;
+    gap:5px;
+    flex-wrap:wrap;
+    padding:0;   
+    margin-bottom: -10px;
+    margin-top: 5px;
+  }
+  .header-site-menu a:hover{ opacity:.6; }
+}
 
 
 
@@ -351,42 +389,4 @@ textarea{
   }
 
    
-}@media (max-width: 768px) {
-.header-logo {
-  margin-top: 20vh;
-  margin-left: 1vw;
-  margin-right: 1vw;
-}
-
-  .header-site-menu a{
-    font-size:40px;
-    font-weight: 800;
-    color:#111;
-    text-decoration:none;
-  }
-  .header-site-menu a:hover{
-    opacity:.6;
-
-  }
-
-  .header-site-menu{
-    color:#111;
-    padding: 40px 5px 5px; /* ← 左右0 */
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:0px;
-    line-height:0.5;
-  }
-
-  .header-site-menu ul{
-    list-style:none;
-    display:flex;
-    gap:5px;
-    flex-wrap:wrap;
-    padding:0;   
-    margin-bottom: -10px;
-    margin-top: 5px;
-  }
-  .header-site-menu a:hover{ opacity:.6; }
 }
