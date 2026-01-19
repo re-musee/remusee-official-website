@@ -42,48 +42,51 @@ a{
   text-decoration:none;
 }
 
-/* =====================================================
-   HEADER（indexと構造完全一致）
-===================================================== */
+/* =======================
+   HEADER
+======================= */
 .header{
-  background:#ffffff; /* about / ourteam */
+  background-color: #fffff;
+  margin: 0;
   color:#111;
-  width:100vw;
-  margin-left:calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
 }
 
-.header-logo,
-.toggle-menu-button{
-  display:none;
+.header-inner h1 {
+  text-align: center;
+  font-size:  clamp(48px, 20vw, 300px);
+  font-family:  "arial", sans-serif;
+  font-weight: 900;
+  font-style: normal;;
+  margin-bottom: 0;
 }
-
-.header-site-menu{
-  padding-top:10px;
-  display:flex;
-  flex-direction:column;
-  align-items:left;
+.header-logo {
+  margin-top: 45vh;
+  margin-left: 3vw;
+  margin-right: 3vw;
 }
 
 .menu{
+  padding-top: 10px;
   display:flex;
   flex-wrap:wrap;
-  gap:clamp(5px, .5vw, 0px);
-  padding-left:30px;
-  margin-top:20px;
-  margin-bottom:-10px;
+  gap: clamp(5px, 0.5vw, 0px);
+  
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .menu a{
-  font-size:clamp(16px, 4.8vw, 82px);
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:-0.02em;
-  line-height:1;
-  color:#111;
+  font-size: clamp(16px, 4.8vw, 82px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color:#fff;
+  line-height: 1;
 }
-
 .menu a:hover{ opacity:.6; }
-
 
 /* =====================================================
    MAIN
