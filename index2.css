@@ -389,7 +389,7 @@ h3{ font-size: clamp(20px, 3vw, 28px); font-weight: 600; }
 
 .ourteam h2 {
   font-size: 100px;
-  margin-top: -15px;
+  margin-top: 0px;
   margin-bottom: 0px;
 }
 
